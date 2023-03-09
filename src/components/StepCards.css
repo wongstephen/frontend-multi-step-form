@@ -1,0 +1,58 @@
+div.step-container {
+  background-color: var(--Magnolia);
+  padding-bottom: 4rem;
+}
+div.step-body {
+  background-color: white;
+  width: min(90%);
+  /* min-height: 30rem; */
+  margin-inline: auto;
+  position: relative;
+  top: -3.75rem;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  line-height: 1.5;
+}
+
+h2 {
+  color: var(--Marine-blue);
+}
+h3 {
+  color: var(--Cool-gray);
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+form > label {
+  font-weight: 500;
+  color: var(--Marine-blue);
+  font-size: 0.8rem;
+}
+form > input {
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+
+  border: 1px solid var(--Light-gray);
+  font-weight: 600;
+  /* color: var(--Light-gray); */
+}
+
+form > input:focus {
+  outline: 2px solid var(--Cool-gray);
+}
+
+/* confirmation component */
+div.confirmation {
+  text-align: center;
+}
+.confirmation > img {
+  margin: 2rem;
+}

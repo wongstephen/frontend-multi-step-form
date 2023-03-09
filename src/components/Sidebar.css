@@ -1,0 +1,31 @@
+div.sidebar {
+  background-color: var(--Pastel-blue);
+  height: 10rem;
+  background-image: url("../public/assets/images/bg-sidebar-mobile.svg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding-top: 2.4rem;
+}
+ul.sidebar {
+  display: flex;
+  gap: 0.8rem;
+}
+p.sidebar-num {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* utility  */
+p.sidebar-num-active {
+  color: black;
+  background-color: var(--Light-blue);
+}

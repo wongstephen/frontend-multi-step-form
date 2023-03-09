@@ -1,0 +1,52 @@
+.summary-text-plan-title,
+/* util */
+.font-thick {
+  font-weight: 700;
+}
+
+/* styles */
+
+ul.step4-list {
+  background-color: var(--Alabaster);
+  border-radius: var(--border-radius);
+}
+li.step4-list,
+div.step4-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+}
+
+li.step4-list:first-of-type {
+  position: relative;
+}
+div.step4-list-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--Light-gray);
+  position: absolute;
+  left: 2.5%;
+  width: 95%;
+  bottom: 0;
+}
+.summary-text-plan-title,
+.summary-text-plan-price {
+  color: var(--Marine-blue);
+}
+
+a.summary-link {
+  text-decoration: underline;
+  color: var(--Cool-gray);
+}
+
+.summary-addon-text {
+  color: var(--Cool-gray);
+}
+
+div.step4-list {
+  margin-top: 1rem;
+}
+
+.summary-total-price {
+  color: var(--Purplish-blue);
+}

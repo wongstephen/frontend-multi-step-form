@@ -1,0 +1,43 @@
+div.steps {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+button.back-step {
+  font-size: 0.8rem;
+  color: var(--Cool-gray);
+  font-weight: 00;
+  background-color: transparent;
+  cursor: pointer;
+}
+button.back-step:hover,
+button.back-step:focus {
+  color: var(--Marine-blue);
+  outline: 1px solid var(--Purplish-blue);
+  outline-offset: 0.75rem;
+}
+
+button.next-step {
+  cursor: pointer;
+  background-color: var(--Marine-blue);
+  padding: 0.8rem 1rem;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+}
+
+button.next-step:hover,
+button.next-step:focus {
+  background-color: var(--Purplish-blue);
+}
+
+/* util */
+button.back-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
