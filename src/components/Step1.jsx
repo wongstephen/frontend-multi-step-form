@@ -25,12 +25,14 @@ const Step1 = () => {
           <label htmlFor="email">Email</label>
           <input
             name="email"
+            type="email"
             placeholder="e.g. stephenking@lorem.com"
             onChange={handleChange}
             value={formData.email}
           ></input>
           <label htmlFor="phone">Phone Number</label>
           <input
+            type="tel"
             name="phone"
             placeholder="e.g. +1 234 567 890"
             onChange={handleChange}

@@ -1,33 +1,81 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Summary.css";
+import { DataContext } from "../../App";
 const Summary = () => {
+  const { services, formData, setFormData } = useContext(DataContext);
+  const setStep = () => {
+    setFormData((prev) => {
+      return { ...prev, step: 2 };
+    });
+  };
+  const totalPrice = () => {
+    let total = 0;
+    total = services[formData.plan.toLowerCase()][formData.billing];
+    if (formData.onlineServices) {
+      total += services.onlineServices[formData.billing];
+    }
+    if (formData.largerStorage) {
+      total += services.largerStorage[formData.billing];
+    }
+    if (formData.customizableProfile) {
+      total += services.customizableProfile[formData.billing];
+    }
+    return total;
+  };
   return (
     <>
       <ul className="step4-list">
         <li className="step4-list">
           <div>
-            <p className="summary-text-plan-title font-thick ">
-              Arcade (monthly)
+            <p className="summary-text-plan-title font-thick">
+              {formData.plan} (
+              {formData.billing === "mo" ? "Monthly" : "Yearly"})
             </p>
-            <a href="" className="summary-link">
+            <p className="summary-link" onClick={setStep}>
               Change
-            </a>
+            </p>
           </div>
-          <p className="summary-text-plan-price font-thick ">$9/mo</p>
+          <p className="summary-text-plan-price font-thick ">
+            ${services[formData.plan.toLowerCase()][formData.billing]}/
+            {formData.billing}
+          </p>
           <div className="step4-list-line"></div>
         </li>
-        <li className="step4-list">
-          <p className="summary-addon-text">Online service</p>
-          <p className="summary-text-plan-price">$1/mo</p>
-        </li>
-        <li className="step4-list">
-          <p className="summary-addon-text">Larger storage</p>
-          <p className="summary-text-plan-price">$2/mo</p>
-        </li>
+        {formData.onlineServices && (
+          <li className="step4-list">
+            <p className="summary-addon-text">
+              {services.onlineServices.title}
+            </p>
+            <p className="summary-text-plan-price">
+              ${services.onlineServices[formData.billing]}/{formData.billing}
+            </p>
+          </li>
+        )}
+        {formData.largerStorage && (
+          <li className="step4-list">
+            <p className="summary-addon-text">{services.largerStorage.title}</p>
+            <p className="summary-text-plan-price">
+              ${services.largerStorage[formData.billing]}/{formData.billing}
+            </p>
+          </li>
+        )}
+        {formData.customizableProfile && (
+          <li className="step4-list">
+            <p className="summary-addon-text">
+              {services.customizableProfile.title}
+            </p>
+            <p className="summary-text-plan-price">
+              ${services.customizableProfile[formData.billing]}/
+              {formData.billing}
+            </p>
+          </li>
+        )}
       </ul>
       <div className="step4-list summary-total-container">
-        <p className="summary-addon-text">Total (per month)</p>
-        <p className="summary-total-price font-thick">+12/mo</p>
+        <p className="summary-addon-text">Total (per {formData.billing})</p>
+        <p className="summary-total-price font-thick">
+          +{totalPrice()}/{formData.billing}
+        </p>
       </div>
     </>
   );

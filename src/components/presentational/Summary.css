@@ -34,7 +34,7 @@ div.step4-list-line {
   color: var(--Marine-blue);
 }
 
-a.summary-link {
+p.summary-link {
   text-decoration: underline;
   color: var(--Cool-gray);
 }

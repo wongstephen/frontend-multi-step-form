@@ -4,14 +4,9 @@ import BillingType from "./presentational/BillingType";
 import { DataContext } from "../App";
 
 const Step2 = () => {
-  const { formData, setFormData } = useContext(DataContext);
-  const plans = {
-    arcade: { title: "Arcade", mo: 9, yr: 90 },
-    advanced: { title: "Advanced", mo: 12, yr: 120 },
-    pro: { title: "Pro", mo: 15, yr: 150 },
-  };
+  const { services, formData, setFormData } = useContext(DataContext);
+
   const handleClick = (title, rate) => {
-    console.log("clicked");
     setFormData((prev) => {
       return { ...prev, plan: title };
     });
@@ -23,20 +18,20 @@ const Step2 = () => {
         <h3>You have the option of monthly or yearly billing.</h3>
         <div className="step-add-on">
           <Plans
-            planTitle={plans.arcade.title}
-            planPrice={plans.arcade[formData.billing]}
+            planTitle={services.arcade.title}
+            planPrice={services.arcade[formData.billing]}
             planBilling={formData.billing}
             handleClick={handleClick}
           />
           <Plans
-            planTitle={plans.advanced.title}
-            planPrice={plans.advanced[formData.billing]}
+            planTitle={services.advanced.title}
+            planPrice={services.advanced[formData.billing]}
             planBilling={formData.billing}
             handleClick={handleClick}
           />
           <Plans
-            planTitle={plans.pro.title}
-            planPrice={plans.pro[formData.billing]}
+            planTitle={services.pro.title}
+            planPrice={services.pro[formData.billing]}
             planBilling={formData.billing}
             handleClick={handleClick}
           />
