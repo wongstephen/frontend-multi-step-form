@@ -1,3 +1,13 @@
+/* utils */
+
+.error-text {
+  color: red;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+.error-input {
+  outline: 1px solid red;
+}
 div.step-container {
   background-color: var(--Magnolia);
   padding-bottom: 4rem;
@@ -29,8 +39,11 @@ form {
   flex-direction: column;
   margin-top: 2rem;
 }
-
-form > label {
+.label-container {
+  display: flex;
+  justify-content: space-between;
+}
+.label-container > label {
   font-weight: 500;
   color: var(--Marine-blue);
   font-size: 0.8rem;

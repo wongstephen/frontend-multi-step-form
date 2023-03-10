@@ -15,14 +15,25 @@ const Step1 = () => {
         <h2>Personal Info</h2>
         <h3>Please provide your name, email address, and phone number.</h3>
         <form>
-          <label htmlFor="name">Name</label>
+          <div className="label-container">
+            <label htmlFor="name">Name</label>
+            {formData.nameErr && (
+              <p className="error-text">This field is required</p>
+            )}
+          </div>
+
           <input
             name="name"
             placeholder="e.g. Stephen King"
             onChange={handleChange}
             value={formData.name}
           ></input>
-          <label htmlFor="email">Email</label>
+          <div className="label-container">
+            <label htmlFor="email">Email</label>
+            {formData.emailErr && (
+              <p className="error-text">This field is required</p>
+            )}
+          </div>
           <input
             name="email"
             type="email"
@@ -30,7 +41,12 @@ const Step1 = () => {
             onChange={handleChange}
             value={formData.email}
           ></input>
-          <label htmlFor="phone">Phone Number</label>
+          <div className="label-container">
+            <label htmlFor="phone">Phone Number</label>
+            {formData.phoneErr && (
+              <p className="error-text">This field is required</p>
+            )}
+          </div>
           <input
             type="tel"
             name="phone"

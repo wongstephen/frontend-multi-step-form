@@ -39,7 +39,11 @@ const Summary = () => {
             ${services[formData.plan.toLowerCase()][formData.billing]}/
             {formData.billing}
           </p>
-          <div className="step4-list-line"></div>
+          {(formData.onlineServices ||
+            formData.largerStorage ||
+            formData.customizableProfile) && (
+            <div className="step4-list-line"></div>
+          )}
         </li>
         {formData.onlineServices && (
           <li className="step4-list">
@@ -72,7 +76,9 @@ const Summary = () => {
         )}
       </ul>
       <div className="step4-list summary-total-container">
-        <p className="summary-addon-text">Total (per {formData.billing})</p>
+        <p className="summary-addon-text">
+          Total (per {formData.billing === "mo" ? "month" : "year"})
+        </p>
         <p className="summary-total-price font-thick">
           +{totalPrice()}/{formData.billing}
         </p>

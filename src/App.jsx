@@ -39,10 +39,13 @@ function App() {
     email: "",
     phone: "",
     billing: "mo",
-    plan: "",
+    plan: "Arcade",
     onlineServices: false,
     largerStorage: false,
     customizableProfile: false,
+    nameErr: false,
+    emailErr: false,
+    phoneErr: false,
   });
   console.log(formData);
   const stepArr = [<Step1 />, <Step2 />, <Step3 />, <Step4 />, <Step5 />];
