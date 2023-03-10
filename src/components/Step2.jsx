@@ -17,7 +17,7 @@ const Step2 = () => {
         <h2>Select your plan</h2>
         <h3>You have the option of monthly or yearly billing.</h3>
         <div className="step-add-on">
-          <div class="step-add-on-container">
+          <div className="step-add-on-container">
             {Object.keys(services.plans).map((plan, idx) => {
               return (
                 <Plans

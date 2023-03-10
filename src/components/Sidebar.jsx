@@ -10,7 +10,6 @@ export const Sidebar = ({ step }) => {
     "Add-ons",
     "Summary"
   );
-  console.log(sidebarStep);
   return (
     <div className="sidebar">
       <ul className="sidebar">

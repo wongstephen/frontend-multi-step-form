@@ -39,6 +39,9 @@ p.summary-link {
   color: var(--Cool-gray);
   cursor: pointer;
 }
+p.summary-link:hover {
+  color: var(--Purplish-blue);
+}
 
 .summary-addon-text {
   color: var(--Cool-gray);
@@ -50,4 +53,5 @@ div.step4-list {
 
 .summary-total-price {
   color: var(--Purplish-blue);
+  font-size: 1.4rem;
 }

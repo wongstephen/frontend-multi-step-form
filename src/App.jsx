@@ -53,8 +53,6 @@ function App() {
     emailErr: false,
     phoneErr: false,
   });
-  // console.log(formData);
-  // console.log(formErr);
   const stepArr = [<Step1 />, <Step2 />, <Step3 />, <Step4 />, <Step5 />];
   return (
     <main className="App">
@@ -62,7 +60,7 @@ function App() {
         value={{ services, formData, setFormData, formErr, setFormErr }}
       >
         <Sidebar step={formData.step} />
-        <div class="app-content">
+        <div className="app-content">
           {stepArr[formData.step - 1]}
           {formData.step !== 5 && <Steps />}
         </div>

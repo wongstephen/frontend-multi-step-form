@@ -1,6 +1,9 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { DataContext } from "../App";
 const Step5 = () => {
+  const { formData } = useContext(DataContext);
+  console.log(formData);
+
   return (
     <div className="step-container">
       <div className="step-body confirmation">
