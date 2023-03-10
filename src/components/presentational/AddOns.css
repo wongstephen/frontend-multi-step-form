@@ -14,6 +14,7 @@
   background-color: var(--Alabaster);
   border: 1px solid var(--Cool-gray);
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .card-addon-btn:focus,
@@ -62,4 +63,12 @@ div.checkbox-active {
 
 .add-on-price {
   color: var(--Purplish-blue);
+}
+
+@media screen and (min-width: 850px) {
+  .step-add-on-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }

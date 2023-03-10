@@ -4,26 +4,45 @@ import { DataContext } from "../App";
 
 export const Sidebar = ({ step }) => {
   const { formData } = useContext(DataContext);
-
+  const sidebarStep = new Array(
+    "Your info",
+    "Select plan",
+    "Add-ons",
+    "Summary"
+  );
+  console.log(sidebarStep);
   return (
     <div className="sidebar">
       <ul className="sidebar">
-        <SideBarNum i={1} step={formData.step} />
-        <SideBarNum i={2} step={formData.step} />
-        <SideBarNum i={3} step={formData.step} />
-        <SideBarNum i={4} step={formData.step} />
+        {sidebarStep.map((desc, idx) => {
+          return (
+            <SideBarNum
+              key={desc + idx}
+              i={idx + 1}
+              step={formData.step}
+              desc={desc}
+            />
+          );
+        })}
       </ul>
-      {/* <!-- Sidebar start --> */}
-      {/* Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary */}
-      {/* <!-- Sidebar end --> */}
     </div>
   );
 };
 
-function SideBarNum({ i, step }) {
+function SideBarNum({ i, step, desc }) {
   return (
     <li className="sidebar">
-      <p className={`sidebar-num ${step === i && "sidebar-num-active"}`}>{i}</p>
+      <p
+        className={`sidebar-num ${step === i && "sidebar-num-active"} ${
+          step === 5 && i === 4 && "sidebar-num-active"
+        }`}
+      >
+        {i}
+      </p>
+      <div className="sidebar-desc-container">
+        <p className="sidebar-desc-step">step {i}</p>
+        <p className="sidebar-desc-title">{desc}</p>
+      </div>
     </li>
   );
 }

@@ -3,7 +3,7 @@ import "./StepCards.css";
 import { DataContext } from "../App";
 
 const Step1 = () => {
-  const { formData, setFormData } = useContext(DataContext);
+  const { formErr, formData, setFormData } = useContext(DataContext);
   const handleChange = (e) => {
     setFormData((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
@@ -17,7 +17,7 @@ const Step1 = () => {
         <form>
           <div className="label-container">
             <label htmlFor="name">Name</label>
-            {formData.nameErr && (
+            {formErr.nameErr && (
               <p className="error-text">This field is required</p>
             )}
           </div>
@@ -30,7 +30,7 @@ const Step1 = () => {
           ></input>
           <div className="label-container">
             <label htmlFor="email">Email</label>
-            {formData.emailErr && (
+            {formErr.emailErr && (
               <p className="error-text">This field is required</p>
             )}
           </div>
@@ -43,7 +43,7 @@ const Step1 = () => {
           ></input>
           <div className="label-container">
             <label htmlFor="phone">Phone Number</label>
-            {formData.phoneErr && (
+            {formErr.phoneErr && (
               <p className="error-text">This field is required</p>
             )}
           </div>

@@ -15,33 +15,20 @@ const Step3 = () => {
         <h2>Pick add-ons</h2>
         <h3>Add-ons help enhance your gaming experience.</h3>
         <div className="step-content-container">
-          <AddOns
-            title={services.onlineServices.title}
-            subtitle={services.onlineServices.subtitle}
-            rate={services.onlineServices[formData.billing]}
-            billing={formData.billing}
-            active={formData.onlineServices}
-            type="onlineServices"
-            handlePlanClick={handlePlanClick}
-          />
-          <AddOns
-            title={services.largerStorage.title}
-            subtitle={services.largerStorage.subtitle}
-            rate={services.largerStorage[formData.billing]}
-            billing={formData.billing}
-            active={formData.largerStorage}
-            type="largerStorage"
-            handlePlanClick={handlePlanClick}
-          />
-          <AddOns
-            title={services.customizableProfile.title}
-            subtitle={services.customizableProfile.subtitle}
-            rate={services.customizableProfile[formData.billing]}
-            billing={formData.billing}
-            active={formData.customizableProfile}
-            type="customizableProfile"
-            handlePlanClick={handlePlanClick}
-          />
+          {Object.keys(services.addons).map((addon, idx) => {
+            return (
+              <AddOns
+                key={addon + idx}
+                title={services.addons[addon].title}
+                subtitle={services.addons[addon].subtitle}
+                rate={services.addons[addon][formData.billing]}
+                billing={formData.billing}
+                active={formData[addon]}
+                type={addon}
+                handlePlanClick={handlePlanClick}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

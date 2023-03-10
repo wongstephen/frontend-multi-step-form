@@ -13,7 +13,9 @@ button.back-step {
   background-color: transparent;
   cursor: pointer;
 }
-button.back-step:hover,
+button.back-step:hover {
+  color: var(--Marine-blue);
+}
 button.back-step:focus {
   color: var(--Marine-blue);
   outline: 1px solid var(--Purplish-blue);
@@ -31,13 +33,25 @@ button.next-step {
   font-size: 0.8rem;
 }
 
-button.next-step:hover,
+button.next-step:hover {
+  background-color: var(--Marine-blue);
+  opacity: 0.9;
+}
 button.next-step:focus {
-  background-color: var(--Purplish-blue);
+  background-color: var(--Marine-blue);
+}
+button.next-step:active {
+  background-color: var(--Pastel-blue);
 }
 
 /* util */
 button.back-hidden {
   opacity: 0 !important;
   pointer-events: none !important;
+}
+
+@media screen and (min-width: 850px) {
+  div.steps {
+    padding: 0;
+  }
 }

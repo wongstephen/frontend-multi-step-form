@@ -8,6 +8,7 @@
   border-radius: 0.5rem;
   width: 100%;
   background-color: var(--Alabaster);
+  cursor: pointer;
 }
 
 .card-plan-sel {
@@ -41,4 +42,14 @@
   font-weight: 700;
   font-size: 0.75rem;
   margin-top: 0.4rem;
+}
+
+@media screen and (min-width: 850px) {
+  .card-plan {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  .plan-title {
+    font-size: 1rem;
+  }
 }

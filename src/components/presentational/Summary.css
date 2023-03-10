@@ -37,6 +37,7 @@ div.step4-list-line {
 p.summary-link {
   text-decoration: underline;
   color: var(--Cool-gray);
+  cursor: pointer;
 }
 
 .summary-addon-text {

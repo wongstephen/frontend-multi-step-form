@@ -10,26 +10,30 @@ import Step5 from "./components/Step5";
 
 export const DataContext = createContext(null);
 const services = {
-  arcade: { title: "Arcade", mo: 9, yr: 90 },
-  advanced: { title: "Advanced", mo: 12, yr: 120 },
-  pro: { title: "Pro", mo: 15, yr: 150 },
-  onlineServices: {
-    title: "Online Service",
-    subtitle: "Access to multiplayer games",
-    mo: 1,
-    yr: 10,
+  plans: {
+    arcade: { title: "Arcade", mo: 9, yr: 90 },
+    advanced: { title: "Advanced", mo: 12, yr: 120 },
+    pro: { title: "Pro", mo: 15, yr: 150 },
   },
-  largerStorage: {
-    title: "Larger storage",
-    subtitle: "Extra 1TB of cloud save",
-    mo: 2,
-    yr: 20,
-  },
-  customizableProfile: {
-    title: "Customizable Profile",
-    subtitle: "Custom theme on your profile",
-    mo: 2,
-    yr: 20,
+  addons: {
+    onlineServices: {
+      title: "Online Service",
+      subtitle: "Access to multiplayer games",
+      mo: 1,
+      yr: 10,
+    },
+    largerStorage: {
+      title: "Larger storage",
+      subtitle: "Extra 1TB of cloud save",
+      mo: 2,
+      yr: 20,
+    },
+    customizableProfile: {
+      title: "Customizable Profile",
+      subtitle: "Custom theme on your profile",
+      mo: 2,
+      yr: 20,
+    },
   },
 };
 function App() {
@@ -43,18 +47,25 @@ function App() {
     onlineServices: false,
     largerStorage: false,
     customizableProfile: false,
+  });
+  const [formErr, setFormErr] = useState({
     nameErr: false,
     emailErr: false,
     phoneErr: false,
   });
-  console.log(formData);
+  // console.log(formData);
+  // console.log(formErr);
   const stepArr = [<Step1 />, <Step2 />, <Step3 />, <Step4 />, <Step5 />];
   return (
     <main className="App">
-      <DataContext.Provider value={{ services, formData, setFormData }}>
+      <DataContext.Provider
+        value={{ services, formData, setFormData, formErr, setFormErr }}
+      >
         <Sidebar step={formData.step} />
-        {stepArr[formData.step - 1]}
-        {formData.step !== 5 && <Steps />}
+        <div class="app-content">
+          {stepArr[formData.step - 1]}
+          {formData.step !== 5 && <Steps />}
+        </div>
       </DataContext.Provider>
     </main>
   );

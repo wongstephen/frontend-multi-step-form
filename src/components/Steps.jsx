@@ -3,32 +3,33 @@ import "./Steps.css";
 import { DataContext } from "../App";
 
 export const Steps = () => {
-  const { formData, setFormData } = useContext(DataContext);
+  const { formData, setFormData, formErr, setFormErr } =
+    useContext(DataContext);
   function handleClick(action) {
     if (formData.step === 1 && !formData.name) {
-      setFormData((prev) => {
+      setFormErr((prev) => {
         return { ...prev, nameErr: true };
       });
     } else {
-      setFormData((prev) => {
+      setFormErr((prev) => {
         return { ...prev, nameErr: false };
       });
     }
     if (formData.step === 1 && !formData.email) {
-      setFormData((prev) => {
+      setFormErr((prev) => {
         return { ...prev, emailErr: true };
       });
     } else {
-      setFormData((prev) => {
+      setFormErr((prev) => {
         return { ...prev, emailErr: false };
       });
     }
     if (formData.step === 1 && !formData.phone) {
-      setFormData((prev) => {
+      setFormErr((prev) => {
         return { ...prev, phoneErr: true };
       });
     } else {
-      setFormData((prev) => {
+      setFormErr((prev) => {
         return { ...prev, phoneErr: false };
       });
     }

@@ -1,12 +1,12 @@
 /* utils */
 
 .error-text {
-  color: red;
+  color: var(--Strawberry-red);
   font-weight: 500;
   font-size: 0.8rem;
 }
 .error-input {
-  outline: 1px solid red;
+  outline: 1px solid var(--Strawberry-red);
 }
 div.step-container {
   background-color: var(--Magnolia);
@@ -15,7 +15,6 @@ div.step-container {
 div.step-body {
   background-color: white;
   width: min(90%);
-  /* min-height: 30rem; */
   margin-inline: auto;
   position: relative;
   top: -3.75rem;
@@ -52,10 +51,8 @@ form > input {
   padding: 0.8rem;
   border-radius: 0.2rem;
   margin-bottom: 1rem;
-
   border: 1px solid var(--Light-gray);
   font-weight: 600;
-  /* color: var(--Light-gray); */
 }
 
 form > input:focus {
@@ -68,4 +65,18 @@ div.confirmation {
 }
 .confirmation > img {
   margin: 2rem;
+}
+
+@media screen and (min-width: 850px) {
+  div.step-body {
+    position: static;
+    top: 0;
+    background-color: none;
+    padding: 0;
+    width: 100%;
+  }
+  div.step-container {
+    background-color: transparent;
+    padding-bottom: 2rem;
+  }
 }
