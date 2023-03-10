@@ -1,18 +1,30 @@
 import React from "react";
 import "./AddOns.css";
-const AddOns = () => {
+const AddOns = ({
+  title,
+  subtitle,
+  billing,
+  rate,
+  active,
+  type,
+  handlePlanClick,
+}) => {
   return (
-    <div className="step-add-on">
+    <div className="step-add-on" onClick={() => handlePlanClick(type)}>
       <button className="card-addon-btn">
         <div className="card-left">
-          <input type="checkbox"></input>
+          <div className={`checkbox ${active && "checkbox-active"}`}>
+            <img src="/assets/images/icon-checkmark.svg" alt="checkmark" />
+          </div>
         </div>
         <div className="card-mid">
-          <p className="add-on-title">Online service</p>
-          <p className="add-on-subtitle">Access to multiplayer games</p>
+          <p className="add-on-title">{title}</p>
+          <p className="add-on-subtitle">{subtitle}</p>
         </div>
         <div className="card-right">
-          <p className="add-on-price">+$1/mo</p>
+          <p className="add-on-price">
+            +${rate}/{billing}
+          </p>
         </div>
       </button>
     </div>
@@ -20,5 +32,3 @@ const AddOns = () => {
 };
 
 export default AddOns;
-
-

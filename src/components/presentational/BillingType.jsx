@@ -12,7 +12,13 @@ const BillingType = () => {
   };
   return (
     <div className="billing-container">
-      <p className="billing-mo">Monthly</p>
+      <p
+        className={`billing-mo ${
+          formData.billing !== "mo" && "billing-inactive"
+        }`}
+      >
+        Monthly
+      </p>
       <button className="billing-btn" onClick={handleClick}>
         <div
           className={`billing-sel ${formData.billing !== "mo" && "move-sel"}`}
@@ -20,7 +26,13 @@ const BillingType = () => {
           <p>Selection</p>
         </div>
       </button>
-      <p className="billing-yr">Yearly</p>
+      <p
+        className={`billing-yr ${
+          formData.billing !== "yr" && "billing-inactive"
+        }`}
+      >
+        Yearly
+      </p>
     </div>
   );
 };

@@ -2,6 +2,9 @@
 .move-sel {
   transform: translateX(150%);
 }
+.billing-inactive {
+  color: var(--Cool-gray) !important;
+}
 
 .billing-container {
   min-width: 100%;

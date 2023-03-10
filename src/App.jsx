@@ -18,6 +18,9 @@ function App() {
     phone: "",
     billing: "mo",
     plan: "",
+    onlineServices: false,
+    largerStorage: false,
+    customizableProfile: false,
   });
   console.log(formData);
   const stepArr = [<Step1 />, <Step2 />, <Step3 />, <Step4 />, <Step5 />];

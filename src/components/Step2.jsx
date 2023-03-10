@@ -13,7 +13,7 @@ const Step2 = () => {
   const handleClick = (title, rate) => {
     console.log("clicked");
     setFormData((prev) => {
-      return { ...prev, plan: title};
+      return { ...prev, plan: title };
     });
   };
   return (
